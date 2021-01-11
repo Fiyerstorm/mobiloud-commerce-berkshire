@@ -12,7 +12,7 @@
 	--color-secondary-5: #666666;
 	--color-secondary-6: #1abc9c;
 	--font-nunito: 'Nunito', sans-serif;
-	--font-playfair: 'Lora', serif;
+	--font-playfair: 'Lato', serif;
 	--shadow: 0px 0.175em 0.5em rgba(2, 8, 20, 0.1), 0px 0.085em 0.175em rgba(2, 8, 20, 0.15);
 }
 
@@ -26,8 +26,9 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	color: var(--font-color-body );
+	color: var( --font-color-body );
 	font-family: var( --font-nunito );
+	background-color: #fff;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -83,13 +84,14 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .mlwoo {
 	padding: 1.25rem;
+	min-height: 100vh;
 
 	&__button {
 		@include button;
 
 		&--primary {
 			color: var( --color-primary-2 );
-			background-color: #e42128;
+			background-color: #e42128 !important;
 			text-transform: uppercase;
 			font-weight: bold;
 
@@ -111,7 +113,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 		&--ghost {
 			color: var( --font-color-body );
-			background-color: rgba( 0, 0, 0, 0 );
+			background-color: rgba( 0, 0, 0, 0 ) !important;
 			text-transform: uppercase;
 			font-weight: bold;
 			border: 1px solid var( --font-color-body );
