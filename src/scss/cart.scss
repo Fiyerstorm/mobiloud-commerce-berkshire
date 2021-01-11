@@ -27,6 +27,65 @@
 
 		.remove {
 			position: absolute;
+			bottom: 8px;
+			right: 0;
+			text-decoration: none;
+			color: var( --silver );
+			width: 19px;
+			height: 19px;
+			text-align: center;
+			line-height: 14px;
+			border-radius: 50%;
+			border: 2px solid var( --silver );
+			font-weight: 700;
+		}
+	}
+
+	&__item-meta {
+		flex: 1;
+	}
+
+	&__item-total-price {
+		font-weight: 700;
+	}
+
+	&__item-quantity {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		max-width: 90px;
+		margin-top: 0.5rem;
+		align-items: center;
+		border: 1px solid var( --silver );
+
+		input[type="number"] {
+			max-width: 32px;
+			padding: 5px 8px;
+			text-align: center;
+			border: 0;
+		}
+	}
+
+	&__quantity-input-control {
+		width: 24px;
+		height: 24px;
+		color: var( --color-secondary-1 );
+		font-family: var( --font-nunito );
+		font-weight: 700;
+		text-align: center;
+		color: var( --color-secondary-5 );
+		line-height: 22px;
+
+		&--decrease {
+			border-right: 1px solid var( --silver );
+		}
+
+		&--increase {
+			border-left: 1px solid var( --silver );
+		}
+
+		&:active {
+			background: var( --color-primary-2 );
 		}
 	}
 
@@ -105,7 +164,13 @@
 
 			th:first-child,
 			td:first-child {
-				min-width: 100px;
+				min-width: 120px;
+				flex: 1;
+			}
+
+			th, td {
+				padding: 0.25rem 0;
+				flex: 2;
 			}
 		}
 

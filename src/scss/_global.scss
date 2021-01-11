@@ -110,11 +110,11 @@ input[type="search"]::-webkit-search-results-decoration {
 		}
 
 		&--ghost {
-			color: var( --color-primary-1 );
+			color: var( --font-color-body );
 			background-color: rgba( 0, 0, 0, 0 );
 			text-transform: uppercase;
 			font-weight: bold;
-			border: 1px solid var( --color-primary-1 );
+			border: 1px solid var( --font-color-body );
 
 			&:active {
 				background-color: var( --silver );
