@@ -5,9 +5,17 @@
 }
 
 .mlwoo--cart {
-	.restore-itemrestore-item {
+	.restore-item {
 		display: none;
+	}
 
+	.woocommerce-message {
+		padding: 0.5rem;
+		text-align: center;
+		border-radius: var( --radius );
+		background-color: var( --color-secondary-5 );
+		color: var( --color-primary-2 );
+		margin-bottom: 0.75rem;
 	}
 
 	.woocommerce-cart-form__contents {
@@ -157,7 +165,6 @@
 			width: 100%;
 			text-align: left;
 			padding: 1rem;
-			border: 1px solid var( --color-secondary-4 );
 			border-radius: var( --radius );
 			background-color: var( --color-primary-2 );
 		}

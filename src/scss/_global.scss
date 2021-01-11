@@ -11,8 +11,8 @@
 	--color-secondary-4: #7f8c8d;
 	--color-secondary-5: #666666;
 	--color-secondary-6: #1abc9c;
-	--font-nunito: 'Nunito', sans-serif;
-	--font-playfair: 'Lato', serif;
+	--font-nunito: Montserrat, sans-serif;
+	--font-playfair: Montserrat, sans-serif;
 	--shadow: 0px 0.175em 0.5em rgba(2, 8, 20, 0.1), 0px 0.085em 0.175em rgba(2, 8, 20, 0.15);
 }
 
@@ -62,6 +62,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	padding: 0.5rem 1rem;
 	border-radius: var( --radius );
 	font-family: var( --font-nunito );
+	color: var( --font-color-body );
 }
 
 @mixin absolute-center {

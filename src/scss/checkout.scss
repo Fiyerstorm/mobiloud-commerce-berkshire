@@ -71,9 +71,24 @@
 			width: 100%;
 			text-align: left;
 			padding: 1rem;
-			border: 2px solid var( --color-secondary-4 );
 			border-radius: var( --radius );
 			background-color: var( --color-primary-2 );
+		}
+
+		tr {
+			display: flex;
+			justify-content: space-between;
+
+			th:first-child,
+			td:first-child {
+				min-width: 100px;
+				max-width: 105px;
+			}
+		}
+
+		.woocommerce-shipping-methods {
+			margin-top: 0;
+			padding-left: 1rem;
 		}
 	}
 
@@ -97,5 +112,19 @@
 	.woocommerce-shipping-methods {
 		margin-top: 0;
 		padding-left: 1rem;
+	}
+
+	.wc-jilt-checkout-consent-prompt {
+		display: none;
+	}
+
+	#wc-authorize-net-cim-credit-card-credit-card-form {
+		margin: 0;
+		padding: 0;
+		border: none;
+
+		input {
+			font-size: 1rem !important;
+		}
 	}
 }

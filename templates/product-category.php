@@ -12,6 +12,17 @@
 			$products = \MLWoo\Ecommerce\WooCommerce\Endpoints\Product_Category::get_product_by_category( $cat_id );
 			$cat_meta = \MLWoo\Ecommerce\WooCommerce\Endpoints\Product_Category::get_category_meta_by_id( $cat_id );
 			$term_childrern = get_term_children( $cat_id, 'product_cat' );
+
+			$term = get_term_by( 'id', $cat_id, 'product_cat' );
+			$term_meta = get_term_meta( $cat_id, 'cat_meta', true );
+			$image_id = get_term_meta( $cat_id, 'thumbnail_id', true );
+			$desc = isset( $term_meta['cat_header'] ) ? wp_strip_all_tags( do_shortcode( $term_meta['cat_header'] ) ) : '';
+			$desc = wp_strip_all_tags( strip_shortcodes( $desc ) );
+			$image_url = '';
+
+			if ( ! empty( $image_id ) ) {
+				$image_url = wp_get_attachment_url( (int)$image_id );
+			}
 		?>
 		<div class="mlwoo mlwoo--product-category">
 
@@ -22,8 +33,15 @@
 						<?php echo esc_html( $cat_meta['name'] ); ?>
 					</div>
 					<div class="mlwoo--product-category__description">
-						<?php echo esc_html( $cat_meta['description'] ); ?>
+						<?php echo wp_kses_post( $desc ); ?>
 					</div>
+				</div>
+			</div>
+
+			<div class="mlwoo--product-category__read-more-wrapper">
+				<div class="mlwoo--product-category__read-more-btn"><?php echo esc_html( 'Read more', 'mlwoo' ); ?></div>
+				<div class="mlwoo--product-category__read-more-desc">
+					<?php echo do_shortcode( $cat_meta['description'] ); ?>
 				</div>
 			</div>
 			<!-- Category meta. -->

@@ -11,5 +11,7 @@ add_action( 'after_setup_theme', function() {
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
-	add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+	if ( ML_IS_APP ) {
+		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+	}
 } );

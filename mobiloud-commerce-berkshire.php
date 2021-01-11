@@ -24,14 +24,4 @@ if ( ! defined( 'MLBERK_TEMPLATE_PATH' ) ) {
 	define( 'MLBERK_TEMPLATE_PATH', MLBERK_PATH . 'templates/' );
 }
 
-add_action( 'plugins_loaded', 'mlberk_switch_user_theme' );
-function mlberk_switch_user_theme() {
-	if ( ML_IS_APP ) {
-		switch_theme( 'twentyseventeen' );
-	} else {
-		switch_theme( 'berkshire-theme' );
-	}
-}
-
 require_once 'init.php';
-

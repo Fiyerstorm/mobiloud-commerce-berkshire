@@ -55,10 +55,21 @@
 			text-decoration: none;
 		}
 	}
+
+	&__grid--category {
+		position: relative;
+		background-color: #fff;
+		margin-top: 0.5rem;
+		transition: transform 0.3s ease;
+	}
 }
 
 .mlwoo--product-category {
 	&__bg {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
 		position: relative;
 		min-height: 250px;
 		background-position: 50% 50%;
@@ -67,7 +78,7 @@
 		height: 100%;
 		margin: 0 -1.25rem;
 		margin-top: -1.25rem;
-		margin-bottom: 1.25rem;
+		padding: 1rem 0;
 
 		&:before {
 			content: '';
@@ -79,8 +90,6 @@
 	}
 
 	&__meta {
-		position: absolute;
-		@include absolute-center;
 		width: 85%;
 		color: var( --color-primary-2 );
 		text-align: center;
@@ -97,5 +106,27 @@
 
 	&__description {
 		font-size: 1.15rem;
+	}
+
+	&__read-more-btn {
+		margin: 0 -18px;
+		padding: 0.45rem 1rem;
+		border: 1px solid var( --silver );
+	}
+
+	&__read-more-desc {
+		position: absolute;
+		padding: 0.5rem;
+		padding-top: 4rem;
+		opacity: 0;
+		transition: opacity 0.5s ease;
+	}
+
+	&__read-more-wrapper {
+		margin: 0 -4px;
+	}
+
+	.accordion-title {
+		display: none;
 	}
 }
