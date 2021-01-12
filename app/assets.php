@@ -17,7 +17,12 @@ function enqueue_scripts() {
 		'all'
 	);
 
-	if ( 'product-category' === $page_type ) {
+	$valid_js = array(
+		'product-category',
+		'cart'
+	);
+
+	if ( \in_array( $page_type, $valid_js ) ) {
 		wp_enqueue_script(
 			'mlwoo-' . $page_type . "-script",
 			MLBERK_URL . "dist/js/" . $page_type . ".bundle.js",

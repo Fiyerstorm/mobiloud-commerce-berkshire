@@ -1,20 +1,20 @@
 ( function( $ ) {
-	const applyCouponBtn = $( 'button[name="apply_coupon"]' );
-	const applyCouponBtnText = $( '.mlwoo--cart__apply-coupon-text' );
-	const applyCouponBtnSpinner = $( '.mlwoo--cart__apply-coupon-spinner' );
-
-	let textCache;
 	let htmlCache;
+	let bgColor = '';
+	let fgColor = '';
 
-	applyCouponBtn.on( 'click', function() {
-		applyCouponBtnText.hide();
-		applyCouponBtnSpinner.show();
+	$( document ).on( 'click', 'button[name="apply_coupon"]', function() {
+		$( '.mlwoo--cart__apply-coupon-spinner' ).show();
+		fgColor = $( this ).css( 'color' );
+		bgColor = $( this ).css( 'background-color' );
 
-		textCache = this.childNodes[2].textContent;
+		$( this ).css( 'color', bgColor );
 		htmlCache = $( this ).children();
 	} );
 
 	$( document ).on( 'applied_coupon', function() {
-		applyCouponBtn.text( textCache ).append( htmlCache );
+		$( 'button[name="apply_coupon"]' ).append( htmlCache );
+		$( 'button[name="apply_coupon"]' ).css( 'color', fgColor );
+		$( '.mlwoo--cart__apply-coupon-spinner' ).hide();
 	} );
 } )( jQuery )

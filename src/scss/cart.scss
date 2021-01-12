@@ -18,6 +18,19 @@
 		margin-bottom: 0.75rem;
 	}
 
+	.woocommerce-error {
+		margin-left: 0;
+		padding-left: 0;
+		list-style-type: none;
+		padding: 1rem;
+		border: 1px solid var(--color-secondary-2);
+		border-radius: var(--radius);
+		color: var(--color-secondary-2);
+		background-color: var(--color-primary-2);
+		font-size: var(--font-size-2);
+		line-height: 1.5;
+	}
+
 	.woocommerce-cart-form__contents {
 		width: 100%;
 	}
@@ -26,6 +39,7 @@
 		.mlwoo--cart__cart-item {
 			border-bottom: 1px solid var( --silver );
 			padding: 0.75rem 0;
+			font-size: var( --font-size-2 );
 		}
 	}
 
@@ -62,7 +76,7 @@
 		flex-flow: row wrap;
 		justify-content: space-between;
 		max-width: 90px;
-		margin-top: 0.5rem;
+		margin-top: 0.65rem;
 		align-items: center;
 		border: 1px solid var( --silver );
 
@@ -117,14 +131,18 @@
 		button[name="update_cart"] {
 			position: relative;
 			width: 100%;
-			font-size: 1rem;
 			padding: 0.5rem 1rem;
-			font-size: 1rem;
 			margin-bottom: 1rem;
+
+			&:disabled {
+				opacity: 0.4;
+				background-color: #d7dee2 !important;
+			}
 		}
 
 		button[name="apply_coupon"] {
 			min-width: 95px;
+			flex: 1;
 
 			.mlwoo--cart__apply-coupon-spinner {
 				display: none;
@@ -161,17 +179,32 @@
 	}
 
 	.cart_totals {
+		margin: 0 -1.25rem;
+
+		h2 {
+			font-size: var( --font-size-1 );
+			text-transform: uppercase;
+			margin-left: 1.25rem;
+			margin-right: 1.25rem;
+		}
+
 		table {
-			width: 100%;
 			text-align: left;
-			padding: 1rem;
 			border-radius: var( --radius );
 			background-color: var( --color-primary-2 );
+			border-top: 1px solid #d6dce0;
+			font-size: var( --font-size-2 );
+			width: 100%;
+			// padding: 0 1rem;
+			// margin: 0 -1.25rem;
 		}
 
 		tr {
 			display: flex;
 			justify-content: space-between;
+			border-bottom: 1px solid #d6dce0;
+			padding: 0.5rem 1.25rem;
+			// margin: 0 -1.25rem;
 
 			th:first-child,
 			td:first-child {
@@ -183,6 +216,16 @@
 				padding: 0.25rem 0;
 				flex: 2;
 			}
+		}
+
+		.shipping-calculator-button {
+			display: block;
+			margin-top: 1rem;
+		}
+
+		.wc-proceed-to-checkout {
+			margin-left: 1.25rem;
+			margin-right: 1.25rem;
 		}
 
 		.woocommerce-shipping-methods {
