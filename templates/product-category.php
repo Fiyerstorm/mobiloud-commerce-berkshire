@@ -38,12 +38,14 @@
 				</div>
 			</div>
 
-			<div class="mlwoo--product-category__read-more-wrapper">
-				<div class="mlwoo--product-category__read-more-btn"><?php echo esc_html( 'Read more', 'mlwoo' ); ?></div>
-				<div class="mlwoo--product-category__read-more-desc">
-					<?php echo do_shortcode( $cat_meta['description'] ); ?>
+			<?php if ( ! empty( do_shortcode( $cat_meta['description'] ) ) ) : ?>
+				<div class="mlwoo--product-category__read-more-wrapper">
+					<div class="mlwoo--product-category__read-more-btn"><?php echo esc_html( 'Read more', 'mlwoo' ); ?></div>
+					<div class="mlwoo--product-category__read-more-desc">
+						<?php echo do_shortcode( $cat_meta['description'] ); ?>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 			<!-- Category meta. -->
 
 			<!-- Products -->
