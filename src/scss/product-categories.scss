@@ -7,7 +7,7 @@
 			width: 100%;
 			padding: 0.5rem 1rem;
 			padding-right: 48px;
-			font-size: 1.25rem;
+			font-size: var( --font-size-1 );
 		}
 	}
 
@@ -89,7 +89,14 @@
 		padding: 0.4rem 0.35rem;
 		background-color: #fff;
 		text-transform: uppercase;
-		font-size: 0.85rem;
+		font-size: var( --font-size-4 );
+		font-weight: bold;
+	}
+
+	&__grid-item--product-count {
+		font-weight: normal;
+		font-size: var( --font-size-4 );
+		margin-top: 0.25rem;
 	}
 
 	&__grid-item-image {
@@ -97,6 +104,7 @@
 		max-width: 100%;
 		margin: 0 auto;
 		height: auto;
+		min-height: 125px;
 		border-radius: var( --radius );
 	}
 
@@ -126,6 +134,16 @@
 
 		ins {
 			text-decoration: none;
+		}
+	}
+
+	.mlwoo__grid--products {
+		.mlwoo__grid-item__category {
+			font-size: var( --font-size-4 );
+		}
+
+		.mlwoo__grid-item__title {
+			font-size: var( --font-size-2 );
 		}
 	}
 }
