@@ -8,7 +8,7 @@ module.exports = {
 		'cart': [ './src/js/cart.js', './src/scss/cart.scss' ],
 		// 'loop': [ './src/js/loop.js', './src/scss/loop.scss' ],
 		'checkout': [ './src/js/checkout.js', './src/scss/checkout.scss' ],
-		// 'account': [ './src/js/orders.js', './src/scss/account.scss' ],
+		'account': [ './src/js/account.js', './src/scss/account.scss' ],
 		'account-orders': [ './src/js/orders.js', './src/scss/orders.scss' ],
 		'thank-you': [ './src/js/thank-you.js', './src/scss/thank-you.scss' ],
 		'account-view-order': [ './src/scss/view-order.scss' ],

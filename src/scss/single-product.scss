@@ -237,6 +237,15 @@
 	.uber-chart-wrap {
 		display: none;
 	}
+
+	.icon-inner {
+		img {
+			width: 100%;
+			max-width: 128px;
+			height: 100%;
+			margin: 0 auto;
+		}
+	}
 }
 
 #designstudio-button,
