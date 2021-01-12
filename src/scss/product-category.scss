@@ -117,9 +117,9 @@
 	}
 
 	&__read-more-btn {
-		margin: 0 -18px;
+		margin: 0 -16px;
 		padding: 0.45rem 1rem;
-		border: 1px solid var( --silver );
+		border-bottom: 1px solid var( --silver );
 		text-transform: uppercase;
 		font-weight: bold;
 		font-size: var( --font-size-2 );
