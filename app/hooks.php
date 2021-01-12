@@ -9,6 +9,7 @@ add_action( 'after_setup_theme', function() {
 	if ( ML_IS_APP ) {
 		remove_action( 'woocommerce_before_cart_totals', 'flatsome_woocommerce_before_cart_totals' );
 		remove_action( 'wp_footer', 'flatsome_mobile_menu', 7 );
+		remove_action( 'woocommerce_checkout_after_order_review', 'flatsome_html_checkout_sidebar' );
 	}
 } );
 

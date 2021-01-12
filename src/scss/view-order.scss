@@ -1,31 +1,32 @@
 @import '_global.scss';
 
 .mlwoo--view-order {
-	background-color: var( --color-primary-2 );
 	min-height: 100vh;
 	
 	mark {
 		background-color: transparent;
 		font-weight: 700;
+		color: var( --font-color-body );
 	}
 
 	.woocommerce-MyAccount-navigation {
 		display: none;
-
 	}
 
 	.woocommerce-order-details__title,
 	.woocommerce-column__title {
-		color: var( --font-color-title );
 		font-family: var( --font-playfair );
+		font-size: var( --font-size-1 );
+		text-transform: uppercase;
+		margin-top: 2rem;
 	}
 
 	.woocommerce-thankyou-order-details.order_details {
 		margin: 0;
 		padding: 0;
 		list-style: none;
-
 		@include card;
+		border: 1px solid var(--silver);
 	}
 
 	.woocommerce-table--order-details {
@@ -33,12 +34,51 @@
 
 		text-align: left;
 		width: 100%;
+		border: 1px solid var(--silver);
+		padding: 0;
+
+		table {
+			text-align: left;
+			border-radius: var( --radius );
+			background-color: var( --color-primary-2 );
+			border-top: 1px solid #d6dce0;
+			font-size: var( --font-size-2 );
+			width: 100%;
+		}
+
+		tr {
+			display: flex;
+			justify-content: space-between;
+			border-bottom: 1px solid #d6dce0;
+			padding: 0.5rem 1.25rem;
+
+			th:first-child,
+			td:first-child {
+				min-width: 120px;
+				flex: 1;
+			}
+
+			th, td {
+				padding: 0.25rem 0;
+				flex: 2;
+			}
+		}
+
+		tbody,
+		tfoot {
+			tr {
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
 	}
 
 	.woocommerce-customer-details {
 		address {
 			@include card;
 			font-style: normal;
+			border: 1px solid var(--silver);
 		}
 
 		&--phone {
