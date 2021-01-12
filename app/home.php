@@ -1,6 +1,6 @@
 <?php
 
-namespace MLBerkshire\Templates;
+namespace MLBerkshire\App;
 
 /**
  * Remove categories section.
@@ -10,7 +10,7 @@ add_filter( 'mlwoo_home_display_categories', '__return_false' );
 /**
  * Register nav menu
  */
-add_action( 'after_setup_theme', '\MLBerkshire\Templates\register_menu' );
+add_action( 'after_setup_theme', '\MLBerkshire\App\register_menu' );
 function register_menu() {
 	register_nav_menus( array(
 		'ml_berkshire_home_menu' => __( 'Berkshire App Homepage Categories' ),
@@ -21,10 +21,52 @@ add_filter( 'mlwoo_home_products_grid_title', function( $title ) {
 	return __( 'Featured products', 'mlberk' );
 } );
 
+add_filter( 'mlwoo_template_home', function( $template ) {
+	return MLBERK_PATH . 'templates/home.php';
+} );
+
+function get_primary_category( $post_id ) {
+	$category_id = get_post_meta( $post_id, '_yoast_wpseo_primary_category', 'category', true );
+
+	if ( $category_id ) {
+		$category_term = get_term( (int)$category_id, 'category' );
+		return $category_term->name;
+	}
+
+	return '';
+}
+
+function get_latest_posts() {
+	$posts_args = array(
+		'post_type'      => 'post',
+		'posts_per_page' => apply_filters( 'mlberk_home_latest_posts_count', 5 ),
+	);
+
+	$posts_query = new \WP_Query( $posts_args );
+
+	$posts_array = array();
+
+	while ( $posts_query->have_posts() ) {
+		$posts_query->the_post();
+
+		$post_id = get_the_ID();
+
+		$posts_array[] = array(
+			'id'        => $post_id,
+			'category'  => get_primary_category( $post_id ),
+			'title'     => get_the_title(),
+			'thumbnail' => get_the_post_thumbnail( $post_id, 'medium' ),
+			'content'   =>  wp_trim_words( wp_strip_all_tags( get_the_content() ), 15, '...' ),
+		);
+	}
+
+	return $posts_array;
+}
+
 /**
  * Load categories from WordPress menu.
  */
-add_action( 'mlwoo_home_replace_categories', '\MLBerkshire\Templates\render_categories' );
+add_action( 'mlwoo_home_replace_categories', '\MLBerkshire\App\render_categories' );
 function render_categories() {
 	$menu_items = get_nav_menu_items_by_location( 'ml_berkshire_home_menu' );
 	$categories = get_categories_from_menu( $menu_items );

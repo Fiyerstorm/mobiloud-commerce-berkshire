@@ -19,7 +19,7 @@ function enqueue_scripts() {
 
 	$valid_js = array(
 		'product-category',
-		'cart'
+		'cart',
 	);
 
 	if ( \in_array( $page_type, $valid_js ) ) {

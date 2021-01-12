@@ -179,3 +179,57 @@
 		}
 	}
 }
+
+.mlberk {
+	&__latest-posts-list {
+		margin-top: 1rem;
+	}
+
+	&__latest-posts-item {
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+		border-bottom: 1px solid var( --silver );
+
+		&:last-child {
+			margin-bottom: 0;
+			border-bottom: none;
+		}
+	}
+
+	&__latest-posts-link {
+		text-decoration: none;
+	}
+
+	&__latest-posts-thumbnail {
+		margin: 0 -1.25rem;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__latest-posts-category {
+		color: var( --color-primary-2 );
+		background-color: #c0893d;
+		text-transform: uppercase;
+		font-size: var( --font-size-3 );
+		margin-top: 1rem;
+		display: inline-block;
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+
+		&:active {
+			background-color: #7c5826;
+		}
+	}
+
+	&__latest-posts-title {
+		font-size: var( --font-size-1 );
+	}
+
+	&__latest-posts-description {
+		font-size: var( --font-size-2 );
+	}
+}
