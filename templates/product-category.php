@@ -73,6 +73,9 @@
 								<div class="mlwoo__grid-item__wrapper-inner" style="background-image: url( <?php echo esc_url( $category->image_url ); ?> )">
 									<div class="mlwoo__grid-item-title mlwoo__grid-item-title--category">
 										<?php echo esc_html( $category->name ); ?>
+										<div class="mlwoo__grid-item--product-count">
+											<?php printf( '%s %s', esc_html( $category->count ), esc_html__( 'products', 'mlberk' ) ) ?>
+										</div>
 									</div>
 								</div>
 							</div>
