@@ -27,7 +27,7 @@ function render_categories() {
 
 	?>
 	<h2 class="mlwoo__grid--title">
-		<span><?php esc_html_e( 'Categories', 'mlwoo' ); ?></span>
+		<span><?php esc_html_e( 'Product categories', 'mlwoo' ); ?></span>
 	</h2>
 	<div class="mlwoo__grid mlwoo__grid--category">
 		<?php foreach ( $categories as $category ) : ?>
@@ -36,6 +36,9 @@ function render_categories() {
 					<div class="mlwoo__grid-item__wrapper-inner" style="background-image: url( <?php echo esc_url( $category->image_url ); ?> )">
 						<div class="mlwoo__grid-item-title mlwoo__grid-item-title--category">
 							<?php echo esc_html( $category->name ); ?>
+							<div class="mlwoo__grid-item--product-count">
+								<?php printf( '%s %s', esc_html( $category->count ), esc_html__( 'products', 'mlberk' ) ) ?>
+							</div>
 						</div>
 					</div>
 				</div>

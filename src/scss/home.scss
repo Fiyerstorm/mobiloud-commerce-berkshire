@@ -7,7 +7,7 @@
 			width: 100%;
 			padding: 0.5rem 1rem;
 			padding-right: 48px;
-			font-size: 1.25rem;
+			font-size: var( --font-size-1 );
 		}
 	}
 
@@ -37,6 +37,20 @@
 
 		.mlwoo__grid--products {
 			margin: 0;
+
+			.mlwoo__grid-item__title {
+				font-size: var( --font-size-4 );
+			}
+		}
+	}
+
+	.mlwoo__grid--products {
+		.mlwoo__grid-item__category {
+			font-size: var( --font-size-4 );
+		}
+
+		.mlwoo__grid-item__title {
+			font-size: var( --font-size-2 );
 		}
 	}
 
@@ -73,16 +87,18 @@
 
 	&__grid--title {
 		position: relative;
+		font-size: var( --font-size-2 );
 		font-weight: 700;
-		font-size: 1.2rem;
 		text-transform: uppercase;
 		text-align: center;
 
 		span {
+			display: inline-block;
 			position: relative;
 			background-color: #fff;
 			z-index: 10;
-			padding: 0 1rem;
+			padding: 0.35rem 0.85rem;
+			border: 1px solid var( --silver );
 		}
 
 		&:after {
@@ -91,7 +107,7 @@
 			top: 50%;
 			left: 0;
 			width: 100%;
-			height: 2px;
+			height: 1px;
 			transform: translate( 0, -50% );
 			background-color: var( --silver );
 			z-index: 1;
@@ -113,7 +129,14 @@
 		padding: 0.4rem 0.35rem;
 		background-color: #fff;
 		text-transform: uppercase;
-		font-size: 0.85rem;
+		font-size: var( --font-size-4 );
+		font-weight: bold;
+	}
+
+	&__grid-item--product-count {
+		font-weight: normal;
+		font-size: var( --font-size-4 );
+		margin-top: 0.25rem;
 	}
 
 	&__grid-item-image {
@@ -121,6 +144,7 @@
 		max-width: 100%;
 		margin: 0 auto;
 		height: auto;
+		min-height: 125px;
 		border-radius: var( --radius );
 	}
 

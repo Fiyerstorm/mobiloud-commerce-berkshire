@@ -14,6 +14,11 @@
 	--font-nunito: Montserrat, sans-serif;
 	--font-playfair: Montserrat, sans-serif;
 	--shadow: 0px 0.175em 0.5em rgba(2, 8, 20, 0.1), 0px 0.085em 0.175em rgba(2, 8, 20, 0.15);
+	--font-size-1: 1rem;
+	--font-size-2: 0.85rem;
+	--font-size-3: 0.75rem;
+	--font-size-4: 0.65rem;
+	--font-size-5: 0.50rem;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -161,4 +166,10 @@ input[type="search"]::-webkit-search-results-decoration {
 		text-decoration: none;
 		margin: 0 auto;
 	}
+}
+
+#designstudio-button,
+#designstudio-minimize {
+	display: none;
+	top: 80% !important;
 }

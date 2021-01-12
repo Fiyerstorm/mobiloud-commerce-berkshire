@@ -6,8 +6,10 @@ add_action( 'wp', function() {
 } );
 
 add_action( 'after_setup_theme', function() {
-	remove_action( 'woocommerce_before_cart_totals', 'flatsome_woocommerce_before_cart_totals' );
-	remove_action( 'wp_footer', 'flatsome_mobile_menu', 7 );
+	if ( ML_IS_APP ) {
+		remove_action( 'woocommerce_before_cart_totals', 'flatsome_woocommerce_before_cart_totals' );
+		remove_action( 'wp_footer', 'flatsome_mobile_menu', 7 );
+	}
 } );
 
 add_action( 'wp_enqueue_scripts', function() {

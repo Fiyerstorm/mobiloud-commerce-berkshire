@@ -1,5 +1,9 @@
 @import '_global.scss';
 
+.mlwoo {
+	min-height: auto;
+}
+
 .mlwoo--single-product {
 	height: calc( 100vh - 80px );
 	overflow-y: scroll;
@@ -98,6 +102,66 @@
 		}
 	}
 
+	&__product-tabs {
+		margin: 0 -1.25rem;
+
+		.woocommerce-tabs {
+			& > div {
+				padding: 0 1rem;
+			}
+
+			table {
+				text-align: left;
+			}
+		}
+
+		.wc-tabs {
+			padding-left: 0;
+			list-style-type: none;
+
+			& > li {
+				padding: 0 1.25rem;
+				border-bottom: 1px solid var( --silver );
+				background-color: var( --color-primary-2 );
+
+				&.active {
+					border-bottom: 1px solid var( --color-secondary-2 );
+				}
+
+				a {
+					display: block;
+					text-decoration: none;
+					padding: 0.45rem 0;
+				}
+
+				&:first-child {
+					border-top: 1px solid var( --silver );
+				}
+			}
+		}
+
+		.woocommerce-Reviews {
+			textarea {
+				width: 100%;
+			}
+
+			.form-submit {
+				input[type="submit"] {
+					@include button;
+					color: var( --font-color-body );
+					background-color: rgba( 0, 0, 0, 0 ) !important;
+					text-transform: uppercase;
+					font-weight: bold;
+					border: 1px solid var( --font-color-body );
+
+					&:active {
+						background-color: var( --silver );
+					}
+				}
+			}
+		}
+	}
+
 	&__add-to-cart-form {
 		display: flex;
 		flex-flow: row wrap;
@@ -165,4 +229,18 @@
 			display: block;
 		}
 	}
+
+	.flipbook-main-wrapper {
+		position: relative !important;
+	}
+
+	.uber-chart-wrap {
+		display: none;
+	}
+}
+
+#designstudio-button,
+#designstudio-minimize {
+	display: block;
+	top: 80% !important;
 }
