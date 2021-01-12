@@ -7,7 +7,7 @@ function enqueue_scripts() {
 	}
 
 	$page_type = \MLWoo\Ecommerce\WooCommerce\Endpoints\Base::$page_type;
-	$asset_version = 1;
+	$asset_version = \Mobiloud::get_option( 'ml-ecommerce-assets-version', '1.0.0' );
 
 	wp_enqueue_style(
 		'mlwoo-' . $page_type . "-style",
