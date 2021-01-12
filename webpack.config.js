@@ -16,7 +16,7 @@ module.exports = {
 		'account-edit-address': [ './src/js/edit-address.js', './src/scss/edit-address.scss' ],
 		'home': [ './src/js/home.js', './src/scss/home.scss' ],
 		// 'single-post': [ './src/scss/single-post.scss' ],
-		// 'single-post': [ './src/scss/single-post.scss' ],
+		'single-post': [ './src/scss/single-post.scss' ],
 		'product-categories': [ './src/js/product-categories.js', './src/scss/product-categories.scss' ],
 		'product-category': [ './src/js/product-category.js', './src/scss/product-category.scss' ],
 	},
