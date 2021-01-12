@@ -17,6 +17,10 @@ function register_menu() {
 	) );
 }
 
+add_filter( 'mlwoo_home_products_grid_title', function( $title ) {
+	return __( 'Featured products', 'mlberk' );
+} );
+
 /**
  * Load categories from WordPress menu.
  */
