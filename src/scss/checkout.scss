@@ -116,11 +116,6 @@
 				flex: 2;
 			}
 		}
-
-		.woocommerce-shipping-methods {
-			margin-top: 0;
-			padding-left: 1rem;
-		}
 	}
 
 	.woocommerce-checkout-payment {
@@ -142,7 +137,21 @@
 
 	.woocommerce-shipping-methods {
 		margin-top: 0;
-		padding-left: 1rem;
+		padding-left: 0;
+		list-style-type: none;
+
+		li {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+			padding: 0.5rem 0;
+
+			input[type="radio"] {
+				margin: 0;
+				margin-right: 0.3rem;
+				margin-top: 1px;
+			}
+		}
 	}
 
 	.wc-jilt-checkout-consent-prompt {
