@@ -136,6 +136,7 @@
 								<div data-quantity-action="increase" class="mlwoo--single-product__quantity-input-control mlwoo--single-product__quantity-input-control--increase">+</div>
 							</div>
 							<button
+								type="button"
 								id="mlwoo--single-product__add-to-cart-button"
 								class="mlwoo__button mlwoo__button--secondary mlwoo--single-product__add-to-cart-button"
 								name="add-to-cart"

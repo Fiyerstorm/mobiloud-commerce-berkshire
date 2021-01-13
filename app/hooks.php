@@ -18,3 +18,11 @@ add_action( 'wp_enqueue_scripts', function() {
 		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 	}
 } );
+
+add_action( 'wp_head', function() {
+	$page_type = get_query_var( 'ml_page_type' );
+
+	if ( ML_IS_APP && 'single-product' !== $page_type ) {
+		remove_action( 'wp_footer', 'get_snapengage_code' );
+	}
+} );
