@@ -1,10 +1,14 @@
 <?php
-add_filter( 'mlwoo_cart_override_templates', function( $template, $template_name, $template_path ) {
-	$basename = basename( $template );
+add_filter( 'woocommerce_locate_template', function( $template, $template_name, $template_path ) {
+	$name = basename( $template );
 
-	if ( 'cart-shipping.php' === $basename ) {
+	if ( 'cart-shipping.php' === $name ) {
 		return MLBERK_TEMPLATE_PATH . 'cart-shipping.php';
 	}
 
+	if ( 'error.php' === $name ) {
+		return MLBERK_TEMPLATE_PATH . 'error.php';
+	}
+
 	return $template;
-}, 10, 3 );
+}, 9999, 3 );
