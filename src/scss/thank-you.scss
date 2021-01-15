@@ -2,13 +2,13 @@
 
 .mlwoo--thank-you {
 	min-height: 100vh;
+	font-size: var( --font-size-2 );
 
 	.woocommerce-order-details__title,
 	.woocommerce-column__title,
 	.woocommerce-thankyou-order-received {
 		color: var( --font-color-body );
 		font-size: var( --font-size-1 );
-		margin-top: 2.5rem;
 	}
 
 	.woocommerce-order-details__title {
@@ -32,7 +32,6 @@
 			text-align: left;
 			border-radius: var( --radius );
 			border-top: 1px solid #d6dce0;
-			font-size: var( --font-size-2 );
 			width: 100%;
 		}
 
@@ -86,5 +85,12 @@
 			padding: 0.5rem 0;
 			margin-top: 0.5rem;
 		}
+	}
+
+	.woocommerce-order-details,
+	.woocommerce-column--billing-address,
+	.woocommerce-column--shipping-address,
+	.entry-content {
+		margin-bottom: 2.5rem;
 	}
 }
