@@ -9,7 +9,8 @@
 	<body>
 
 		<?php
-			$categories = \MLWoo\Ecommerce\WooCommerce\Endpoints\Home::get_categories();
+			$menu_items = \MLBerkshire\App\get_nav_menu_items_by_location( 'ml_berkshire_home_menu' );
+			$categories = \MLBerkshire\App\get_categories_from_menu( $menu_items );
 			$products   = \MLWoo\Ecommerce\WooCommerce\Endpoints\Home::get_products();
 			$lt_posts   = \MLBerkshire\App\get_latest_posts();
 		?>
@@ -34,25 +35,25 @@
 			<!-- Search field. -->
 
 			<!-- Categories -->
-			<?php if ( apply_filters( 'mlwoo_home_display_categories', true ) ) : ?>
-				<h2 class="mlwoo__grid--title">
-					<span><?php esc_html_e( 'Categories', 'mlwoo' ); ?></span>
-				</h2>
-				<div class="mlwoo__grid mlwoo__grid--category">
-					<?php foreach ( $categories as $category ) : ?>
-						<a href="" onclick="nativeFunctions.handleLink( '<?php echo esc_url( sprintf( MLWOO_ENDPOINT . '/product-category/%s', $category->term_id ) ); ?>', '<?php echo $category->name; ?>', 'native' )" class="mlwoo__grid-item--square">
-							<div class="mlwoo__grid-item__wrapper">
-								<div class="mlwoo__grid-item__wrapper-inner" style="background-image: url( <?php echo esc_url( $category->image_url ); ?> )">
-									<div class="mlwoo__grid-item-title mlwoo__grid-item-title--category">
-										<?php echo esc_html( $category->name ); ?>
+			<h2 class="mlwoo__grid--title">
+				<span><?php echo apply_filters( 'mlwoo_home_products_grid_title', esc_html__( 'Product categories', 'mlwoo' ) ); ?></span>
+			</h2>
+			<div class="mlwoo__grid mlwoo__grid--category">
+				<?php foreach ( $categories as $category ) : ?>
+					<a href="" onclick="nativeFunctions.handleLink( '<?php echo esc_url( sprintf( MLWOO_ENDPOINT . '/product-category/%s', $category->term_id ) ); ?>', '<?php echo $category->name; ?>', 'native' )" class="mlwoo__grid-item--square">
+						<div class="mlwoo__grid-item__wrapper">
+							<div class="mlwoo__grid-item__wrapper-inner" style="background-image: url( <?php echo esc_url( $category->image_url ); ?> )">
+								<div class="mlwoo__grid-item-title mlwoo__grid-item-title--category">
+									<?php echo esc_html( $category->name ); ?>
+									<div class="mlwoo__grid-item--product-count">
+										<?php printf( '%s %s', esc_html( $category->count ), esc_html__( 'products', 'mlberk' ) ) ?>
 									</div>
 								</div>
 							</div>
-						</a>
-					<?php endforeach; ?>
-				</div>
-			<?php endif; ?>
-
+						</div>
+					</a>
+				<?php endforeach; ?>
+			</div>
 			<!-- Categories. -->
 
 			<!-- Products -->
