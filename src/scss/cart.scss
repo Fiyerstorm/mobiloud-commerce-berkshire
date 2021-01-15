@@ -244,11 +244,16 @@
 	}
 
 	.woocommerce-shipping-calculator {
-		.mlwoo__input {
+		.mlwoo__input,
+		#calc_shipping_state {
 			width: 100%;
 			font-size: 1rem;
 			padding: 0.5rem 1rem;
 			font-size: 1rem;
+		}
+
+		#calc_shipping_state {
+			@include input;
 		}
 	}
 
