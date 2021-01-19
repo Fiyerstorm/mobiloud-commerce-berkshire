@@ -15,6 +15,10 @@ function register_menu() {
 	register_nav_menus( array(
 		'ml_berkshire_home_menu' => __( 'Berkshire App Homepage Categories' ),
 	) );
+
+	register_nav_menus( array(
+		'ml_berkshire_product_categories_menu' => __( 'Berkshire App Product Categories' ),
+	) );
 }
 
 add_filter( 'mlwoo_home_products_grid_title', function( $title ) {

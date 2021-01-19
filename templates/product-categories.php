@@ -9,7 +9,7 @@
 	<body>
 
 		<?php
-			$menu_items = \MLBerkshire\App\get_nav_menu_items_by_location( 'ml_berkshire_home_menu' );
+			$menu_items = \MLBerkshire\App\get_nav_menu_items_by_location( 'ml_berkshire_product_categories_menu' );
 			$categories = \MLBerkshire\App\get_categories_from_menu( $menu_items );
 			$products   = \MLWoo\Ecommerce\WooCommerce\Endpoints\Home::get_products();
 		?>
