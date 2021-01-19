@@ -40,7 +40,7 @@
 			</h2>
 			<div class="mlwoo__grid mlwoo__grid--category">
 				<?php foreach ( $categories as $category ) : ?>
-					<a href="" onclick="nativeFunctions.handleLink( '<?php echo esc_url( sprintf( MLWOO_ENDPOINT . '/product-category/%s', $category->term_id ) ); ?>', '<?php echo $category->name; ?>', 'native' )" class="mlwoo__grid-item--square">
+					<a onclick="nativeFunctions.handleLink( '<?php echo esc_url( sprintf( MLWOO_ENDPOINT . '/product-category/%s', $category->term_id ) ); ?>', '<?php echo $category->name; ?>', 'native' )" class="mlwoo__grid-item--square">
 						<div class="mlwoo__grid-item__wrapper">
 							<div class="mlwoo__grid-item__wrapper-inner" style="background-image: url( <?php echo esc_url( $category->image_url ); ?> )">
 								<div class="mlwoo__grid-item-title mlwoo__grid-item-title--category">
@@ -63,7 +63,7 @@
 				</h2>
 				<div class="mlwoo__grid mlwoo__grid--products">
 					<?php foreach ( $products['posts'] as $post ) : ?>
-						<a href="#" onclick="nativeFunctions.handleLink( '<?php echo esc_url( sprintf( MLWOO_ENDPOINT . '?product_id=%s', $post['id'] ) ); ?>', '<?php echo $post['title']; ?>', 'native' )" class="mlwoo__grid-item--normal">
+						<a onclick="nativeFunctions.handleLink( '<?php echo esc_url( sprintf( MLWOO_ENDPOINT . '?product_id=%s', $post['id'] ) ); ?>', '<?php echo $post['title']; ?>', 'native' )" class="mlwoo__grid-item--normal">
 							<div class="mlwoo__grid-item__wrapper">
 								<div class="mlwoo__grid-item__wrapper-inner">
 									<img class="mlwoo__grid-item-image" src="<?php echo esc_url( $post['image_url'] ); ?>" />

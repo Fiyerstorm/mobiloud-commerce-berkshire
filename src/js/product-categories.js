@@ -68,21 +68,6 @@ import '../images/loading-dark.svg';
 		}
 	} );
 
-	$( window ).scroll( function() {
-		if ( ajaxInProgress ) {
-			return;
-		}
-
-		if ( maxPostsCategories > 0 && currentPageCategories * 10 >= maxPostsCategories ) {
-			return;
-		}
-
-		if ( $( window ).scrollTop() + $( window ).height() > $( '.mlwoo__grid--category' ).height() - 88 ) {
-			++currentPageCategories;
-			searchCategory();
-		}
-	} )
-
 	function searchProduct( append = false ) {
 		if ( searchText.length <= 3 ) {
 			return;
