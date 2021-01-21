@@ -8,6 +8,10 @@
 	height: calc( 100vh - 80px );
 	overflow-y: scroll;
 
+	&--full {
+		height: 100vh;
+	}
+
 	.mlwoo-breadcrumb {
 		font-size: 0.85rem;
 		font-weight: 700;

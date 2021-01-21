@@ -9,8 +9,16 @@
 	<body>
 		<?php
 			global $post, $product;
+
+			$current_product = new \WC_Product( $post->ID );
+
+			if ( ! ( $current_product->is_purchasable() && $current_product->is_in_stock() ) ) {
+				$root_class = 'mlwoo--single-product--full-height';
+			} else {
+				$root_class = '';
+			}
 		?>
-		<div class="mlwoo mlwoo--single-product">
+		<div class="mlwoo mlwoo--single-product <?php echo esc_attr( $root_class ); ?>">
 
 			<div class="mlwoo__pill"><?php esc_html_e( 'Product added to the cart.', 'mlwoo' ); ?></div>
 
