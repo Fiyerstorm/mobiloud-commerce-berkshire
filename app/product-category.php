@@ -12,7 +12,7 @@ function get_formatted_categories( $terms = array() ) {
 
 	foreach ( $terms as $index => $term_id ) {
 		$term = get_term_by( 'id', $term_id, 'product_cat' );
-		$thumbnail_id = get_woocommerce_term_meta( $term_id, 'thumbnail_id', true );
+		$thumbnail_id = get_term_meta( $term_id, 'thumbnail_id', true );
 		$image_url    = wp_get_attachment_url( $thumbnail_id );
 
 		if ( false === $image_url ) {

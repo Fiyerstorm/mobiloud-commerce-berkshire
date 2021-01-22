@@ -73,7 +73,7 @@ function get_categories_from_menu( $menu_items = array() ) {
 	if ( ! empty( $menu_items ) && is_array( $menu_items ) ) {
 		foreach ( $menu_items as $index => $menu_item ) {
 			$term = get_term_by( 'id', (int)$menu_item->object_id, 'product_cat' );
-			$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+			$thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
 			$image_url    = wp_get_attachment_url( $thumbnail_id );
 
 			if ( false === $image_url ) {
