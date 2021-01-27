@@ -145,6 +145,20 @@
 			}
 		}
 
+		.tab-panels {
+			& > div {
+				opacity: 0;
+				height: 0;
+				overflow: hidden;
+
+				&.active {
+					opacity: 1;
+					height: 100%;
+					overflow: auto;
+				}
+			}
+		}
+
 		.woocommerce-Reviews {
 			textarea {
 				width: 100%;
@@ -237,6 +251,7 @@
 
 	.flipbook-main-wrapper {
 		position: relative !important;
+		min-height: 480px;
 	}
 
 	.uber-chart-wrap {
