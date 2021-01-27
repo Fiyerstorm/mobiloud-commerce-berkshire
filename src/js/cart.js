@@ -5,7 +5,6 @@
 
 	let textCache;
 	let htmlCache;
-	let currentCartTotal = getCartTotal();
 
 	applyCouponBtn.on( 'click', function() {
 		applyCouponBtnText.hide();
@@ -14,14 +13,14 @@
 		textCache = this.childNodes[2].textContent;
 		htmlCache = $( this ).children();
 	} );
-	
+
 	$( document ).on( 'click', '.mlwoo--cart__quantity-input-control', function() {
 		const current = $( this );
 		const action = current.data( 'quantity-action' );
 		const closestParent = current.closest( '.mlwoo--cart__item-quantity' );
 		const inputField = closestParent.find( '.mlwoo--cart__quantity-input' );
 		const quantity = Number( inputField.val() );
-		
+
 		$( 'button[name="update_cart"]' ).prop( 'disabled', false );
 
 		switch ( action ) {
@@ -46,16 +45,10 @@
 
 	$( document.body ).on( 'updated_cart_totals', function( event ) {
 		const updatedCartTotal = getCartTotal();
-	
-		if ( updatedCartTotal > currentCartTotal ) {
-			nativeFunctions.addToCart( updatedCartTotal - currentCartTotal );
-		}
-	
-		if ( updatedCartTotal < currentCartTotal ) {
-			nativeFunctions.removeFromCart( currentCartTotal - updatedCartTotal );
-		}
 
-		currentCartTotal = updatedCartTotal;
+		if ( 'undefined' !== typeof nativeFunctions ) {
+			nativeFunctions.syncCart( updatedCartTotal );
+		}
 	} );
 
 	function getCartTotal() {

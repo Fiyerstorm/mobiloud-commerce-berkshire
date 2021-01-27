@@ -11,7 +11,7 @@
 
 	checkout_form.on( 'checkout_place_order_success', function() {
 		if ( 'undefined' !== typeof nativeFunctions ) {
-			nativeFunctions.removeFromCart( Number( mlwoo.cartCount ) );
+			nativeFunctions.syncCart( Number( mlwoo.cartCount ) );
 		}
 	} );
 
