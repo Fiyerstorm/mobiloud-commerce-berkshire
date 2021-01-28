@@ -45,6 +45,10 @@ tns( {
 				return;
 			}
 
+			if ( 'undefined' !== typeof nativeFunctions ) {
+				nativeFunctions.syncCart( quantity );
+			}
+
 			controlBoard.removeClass( 'mlwoo__pointer--disable' );
 			addToCartBtnText.show();
 			addToCartSpinner.hide();
@@ -83,4 +87,51 @@ tns( {
 			pill.removeClass( 'mlwoo__pill--slide-in' );
 		}, 1800 );
 	}
+
+	$( document ).ready( function () {
+		$( '#commentform' ).bind( 'submit', function( event ) {
+				const status = $( '#comment-status' );
+				const spinner = $( '.mlwoo-spinner' );
+
+				$.ajax( {
+					type: $( this ).attr( 'method' ),
+					url: $( this ).attr( 'action' ),
+					data: $( this ).serialize(),
+					error: function( XMLHttpRequest, textStatus, errorThrown ) {
+					},
+					beforeSend: function () {
+						spinner.show();
+					},
+					success: function ( data, textStatus) {
+						if ( data.status == 'success' ) {
+							status.addClass( 'alert alert-success' ).text( data.message );
+							$( '#comment' ).val( '' );
+							$( '#title' ).val( '' );
+						} else {
+							status.addClass( 'alert alert-error' ).html( data );
+						}
+					},
+					complete: function () {
+						status.delay( 5000 ).slideUp( 'slow' );
+						spinner.hide();
+					}
+				} );
+				event.preventDefault();
+			}
+		);
+	} );
+
+	$( document ).on( 'click', 'a', function( e ) {
+		const validAnchor = $( this ).closest( '.must-log-in' );
+
+		if ( 0 === validAnchor.length ) {
+			return;
+		}
+
+		e.preventDefault();
+
+		if ( 'undefined' !== typeof nativeFunctions ) {
+			nativeFunctions.handleButton( 'login', null ,null );
+		}
+	} );
 } )( jQuery )
