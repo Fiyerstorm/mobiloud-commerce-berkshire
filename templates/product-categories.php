@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
-		<?php MLWoo\Ecommerce\WooCommerce\Endpoints\Base::load_css(); ?>
 		<?php wp_head(); ?>
 	</head>
 	<body>
@@ -58,7 +57,6 @@
 			<!-- Categories. -->
 		</div>
 
-		<?php MLWoo\Ecommerce\WooCommerce\Endpoints\Base::load_js(); ?>
 		<footer class="mlwoo__footer">
 			<?php wp_footer(); ?>
 		</footer>
