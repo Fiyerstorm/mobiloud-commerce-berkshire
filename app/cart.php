@@ -1,6 +1,6 @@
 <?php
 add_filter( 'woocommerce_locate_template', function( $template, $template_name, $template_path ) {
-	if ( ! ML_IS_APP ) {
+	if ( ! MLWOO_IS_APP ) {
 		return $template;
 	}
 

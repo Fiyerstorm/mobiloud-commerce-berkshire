@@ -2,7 +2,7 @@
 namespace MLBerkshire\App;
 add_action( 'wp_enqueue_scripts','\MLBerkshire\App\enqueue_scripts', 999 );
 function enqueue_scripts() {
-	if ( ! ML_IS_APP && 'true' !== $_GET['ml_is_app'] ) {
+	if ( ! MLWOO_IS_APP && 'true' !== $_GET['ml_is_app'] ) {
 		return;
 	}
 
