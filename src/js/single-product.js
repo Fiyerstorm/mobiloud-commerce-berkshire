@@ -46,7 +46,7 @@ tns( {
 			}
 
 			if ( 'undefined' !== typeof nativeFunctions ) {
-				nativeFunctions.syncCart( quantity );
+				nativeFunctions.syncCart( response.data.cartCount );
 			}
 
 			controlBoard.removeClass( 'mlwoo__pointer--disable' );

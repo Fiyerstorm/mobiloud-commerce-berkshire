@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<?php
-			global $post, $product;
+			global $post, $product, $woocommerce;
 
 			$current_product = new \WC_Product( $post->ID );
 
@@ -164,6 +164,11 @@
 		</div>
 		<footer class="mlwoo__footer">
 			<?php wp_footer(); ?>
+			<script>
+				if ( 'undefined' !== typeof nativeFunctions ) {
+					nativeFunctions.syncCart( <?php echo $woocommerce->cart->cart_contents_count; ?> );
+				}
+			</script>
 		</footer>
 	</body>
 </html>
