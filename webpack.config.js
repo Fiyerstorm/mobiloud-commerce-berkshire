@@ -3,8 +3,17 @@ const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = {
 	entry: {
+		'single-product': [ './src/scss/single-product.scss' ],
+		'cart': [ './src/scss/cart.scss' ],
 		'checkout': [ './src/js/checkout.js', './src/scss/checkout.scss' ],
-		'account': [ './src/js/account.js', './src/scss/account.scss' ],
+		'account': [ './src/scss/account.scss' ],
+		'account-orders': [ './src/scss/orders.scss' ],
+		'thank-you': [ './src/scss/thank-you.scss' ],
+		'account-view-order': [ './src/scss/view-order.scss' ],
+		// 'view-order': [ './src/scss/view-order.scss' ],
+		'account-edit-address': [ './src/scss/edit-address.scss' ],
+		'home': [ './src/scss/home.scss' ],
+		// 'single-post': [ './src/scss/single-post.scss' ],
 		'single-post': [ './src/scss/single-post.scss' ],
 		'product-categories': [ './src/js/product-categories.js', './src/scss/product-categories.scss' ],
 		'product-category': [ './src/js/product-category.js', './src/scss/product-category.scss' ],
