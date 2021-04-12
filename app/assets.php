@@ -20,7 +20,6 @@ function enqueue_scripts() {
 	$valid_js = array(
 		'product-categories',
 		'product-category',
-		'checkout',
 	);
 
 	if ( \in_array( $page_type, $valid_js ) ) {

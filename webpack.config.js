@@ -5,7 +5,7 @@ module.exports = {
 	entry: {
 		'single-product': [ './src/scss/single-product.scss' ],
 		'cart': [ './src/scss/cart.scss' ],
-		'checkout': [ './src/js/checkout.js', './src/scss/checkout.scss' ],
+		'checkout': [ './src/scss/checkout.scss' ],
 		'account': [ './src/scss/account.scss' ],
 		'account-orders': [ './src/scss/orders.scss' ],
 		'thank-you': [ './src/scss/thank-you.scss' ],
