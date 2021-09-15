@@ -90,8 +90,18 @@ function get_categories_from_menu( $menu_items = array() ) {
 
 function get_nav_menu_items_by_location( $location, $args = [] ) {
 	$locations = get_nav_menu_locations();
-	$object    = wp_get_nav_menu_object( $locations[ $location ] );
-	$menu_items = wp_get_nav_menu_items( $object->name, $args );
+
+	if ( isset( $locations[ $location ] ) ) {
+		$object = wp_get_nav_menu_object( $locations[ $location ] );
+	} else {
+		$object = array();
+	}
+
+	if ( ! empty( $object ) ) {
+		$menu_items = wp_get_nav_menu_items( $object->name, $args );
+	} else {
+		$menu_items = array();
+	}
 
 	return $menu_items;
 }
